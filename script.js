@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const age = document.getElementById('age').value;
     const price = document.getElementById('price').value;
     const color = document.getElementById('color').value;
+    const location = document.getElementById('location').option;
     const description = document.getElementById('description').value;
 
     // Create a new horse card
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <p><strong>Breed:</strong> ${breed}</p>
       <p><strong>Age:</strong> ${age}</p>
       <p><strong>Price:</strong> $${price}</p>
+      <p><strong>location:</strong> ${location}</p>
       <p>${description}</p>
     `;
 
