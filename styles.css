@@ -8,7 +8,7 @@ body {
 
 header {
     background: #4CAF50;
-    color: white;
+    color: gray;
     padding: 15px 0;
     text-align: center;
 }
@@ -24,7 +24,7 @@ nav ul li {
 }
 
 nav a {
-    color: white;
+    color: gray;
     text-decoration: none;
 }
 
@@ -43,7 +43,7 @@ footer {
     text-align: center;
     padding: 15px 0;
     background: #4CAF50;
-    color: white;
+    color: gray;
 }
 
 input[type="text"], input[type="number"], input[type="password"], textarea {
@@ -57,7 +57,7 @@ input[type="text"], input[type="number"], input[type="password"], textarea {
 
 button {
     background: #4CAF50;
-    color: white;
+    color: gray;
     padding: 10px;
     border: none;
     border-radius: 4px;
