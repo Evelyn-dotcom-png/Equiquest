@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EQuest - Equestrian Marketplace</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    #hero {
+      background: #6c757d;
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    #hero h2 {
+      font-size: 2.5em;
+    }
+
+    #hero form {
+      margin-top: 20px;
+    }
+
+    #hero input, #hero button {
+      padding: 10px;
+      margin: 5px;
+      border: none;
+    }
+
+    #hero button {
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    #listings {
+      padding: 20px;
+    }
+
+    #listings h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background: #fff;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px;
+    }
+
+    .card p {
+      margin: 10px;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EQuest</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="container">
+        <h2>Your Trusted Equestrian Marketplace</h2>
+        <form id="search-form">
+          <input type="text" id="search-input" placeholder="Search horses by breed, discipline, or location">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Listings Section -->
+    <section id="listings">
+      <div class="container">
+        <h2>Available Horses</h2>
+        <div class="grid" id="horse-listings">
+          <!-- Listings will be displayed here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Add Listing Section -->
+    <section id="add-listing">
+      <div class="container">
+        <h2>Add Your Horse Listing</h2>
+        <form id="add-listing-form">
+          <label for="horseName">Horse Name:</label>
+          <input type="text" id="horseName" placeholder="e.g., Bella" required>
+
+          <label for="breed">Breed:</label>
+          <input type="text" id="breed" placeholder="e.g., Thoroughbred" required>
+
+          <label for="age">Age:</label>
+          <input type="number" id="age" placeholder="e.g., 5" required>
+
+          <label for="color">Color:</label>
+          <input type="text" id="color" placeholder="e.g., Chestnut" required>
+
+          <label for="price">Price ($):</label>
+          <input type="number" id="price" placeholder="e.g., 5000" required>
+
+          <label for="location">Location:</label>
+          <select id="location" required>
+            <option value="" disabled selected>Select Location</option>
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="Europe">Europe</option>
+            <option value="Australia">Australia</option>
+          </select>
+
+          <label for="description">Description:</label>
+          <textarea id="description" placeholder="Write a short description about the horse" rows="5" required></textarea>
+
+          <label for="image">Upload Image:</label>
+          <input type="file" id="image" accept="image/*" required>
+
+          <p><strong>Fee:</strong> $50 per listing</p>
+          <button type="submit">Submit Listing</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 EQuest. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize the horses data (from localStorage if available)
+    const horses = JSON.parse(localStorage.getItem('horses')) || [];
+
+    // Function to display the horse listings on the page
+    function displayHorses() {
+      const horseListContainer = document.getElementById('horse-listings');
+      horseListContainer.innerHTML = ''; // Clear previous listings
+
+      horses.forEach(horse => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        // Create the image element
+        const img = document.createElement('img');
+        img.src = horse.image;
+        card.appendChild(img);
+
+        // Create the horse details section
+        const details = document.createElement('div');
+        details.innerHTML = `
+          <h3>${horse.name}</h3>
+          <p><strong>Breed:</strong> ${horse.breed}</p>
+          <p><strong>Age:</strong> ${horse.age}</p>
+          <p><strong>Color:</strong> ${horse.color}</p>
+          <p><strong>Price:</strong> $${horse.price}</p>
+          <p><strong>Location:</strong> ${horse.location}</p>
+          <p>${horse.description}</p>
+        `;
+        card.appendChild(details);
+
+        // Append the card to the horse listings grid
+        horseListContainer.appendChild(card);
+      });
+    }
+
+    // Add listing form submission handler
+    document.getElementById('add-listing-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Collect form data
+      const name = document.getElementById('horseName').value;
+      const breed = document.getElementById('breed').value;
+      const age = document.getElementById('age').value;
+      const color = document.getElementById('color').value;
+      const price = document.getElementById('price').value;
+      const location = document.getElementById('location').value;
+      const description = document.getElementById('description').value;
+      const imageFile = document.getElementById('image').files[0];
+
+      if (!name || !breed || !age || !color || !price || !location || !description || !imageFile) {
+        alert("All fields are required, including the image.");
+        return;
+      }
+
+      // Create a file reader to read the uploaded image
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const image = e.target.result;  // Base64 encoded image
+
+        // Add the new horse to the array
+        horses.push({
+          name,
+          breed,
+          age: parseInt(age),
+          color,
+          price: parseFloat(price),
+          location,
+          description,
+          image
+        });
+
+        // Save the horses array to localStorage
+        localStorage.setItem('horses', JSON.stringify(horses));
+
+        // Display the updated horse listings
+        displayHorses();
+
+        // Reset the form
+        document.getElementById('add-listing-form').reset();
+      };
+      reader.readAsDataURL(imageFile); // Read the image file as a base64 URL
+    });
+
+    // Display the horses when the page loads
+    display
