@@ -232,3 +232,65 @@ document.querySelector('#add-listing-form').addEventListener('submit', (event) =
 
 // Display horses on page load (this will show the initial listings)
 displayHorses(horses);
+document.querySelector('#add-listing-form').addEventListener('submit', function (event) {
+  event.preventDefault();  // Prevents form from submitting and reloading the page
+  console.log("Form submitted!");  // Debug line to check if submit is working
+});
+document.querySelector('#add-listing-form').addEventListener('submit', function (event) {
+  event.preventDefault();  // Prevent the form from submitting and refreshing the page
+  console.log("Form submission triggered!");  // Check if it's being triggered
+
+  // Simulate the $50 fee confirmation
+  const feePaid = confirm("Do you confirm the $50 fee payment to post your listing?");
+  if (!feePaid) {
+    alert("Listing not posted. Fee must be paid.");
+    return;
+  }
+
+  // Gather the form data
+  const name = document.querySelector('#horseName').value;
+  const breed = document.querySelector('#breed').value;
+  const age = document.querySelector('#age').value;
+  const color = document.querySelector('#color').value;
+  const price = document.querySelector('#price').value;
+  const location = document.querySelector('#location').value;
+  const description = document.querySelector('#description').value;
+  const imageFile = document.querySelector('#image').files[0];
+
+  console.log(name, breed, age, color, price, location, description, imageFile); // Debug: check the form data
+
+  if (!name || !breed || !age || !color || !price || !location || !description || !imageFile) {
+    alert("All fields are required, including the image.");
+    return;
+  }
+
+  // FileReader to handle image upload
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    const image = e.target.result;
+
+    // Add the new horse to the array
+    horses.push({
+      name,
+      breed,
+      age: parseInt(age),
+      color,
+      price: parseFloat(price),
+      location,
+      description,
+      image
+    });
+
+    // Save to localStorage
+    localStorage.setItem('horses', JSON.stringify(horses));
+
+    // Refresh the listings
+    displayHorses(horses);
+
+    // Clear the form
+    document.querySelector('#add-listing-form').reset();
+    alert("Listing posted successfully!");
+  };
+
+  reader.readAsDataURL(imageFile); // Read the image file
+});
