@@ -3,3 +3,7 @@ npx create-react-app equestpro
 cd equestpro
 npm start
 npm install react-router-dom
+mkdir server
+cd server
+npm init -y
+npm install express mongoose cors dotenv
