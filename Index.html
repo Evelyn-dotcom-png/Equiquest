@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>EQuest.com - Equine Marketplace</title>
+</head>
+<body>
+    <header>
+        <div class="logo">EQuest.com</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#listings">Horse Listings</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About EQuest</h2>
+        <p>Your premier online marketplace for buying and selling horses. Join our community!</p>
+    </section>
+
+    <section id="listings">
+        <h2>Horse Listings</h2>
+        <div id="listing-form">
+            <h3>List Your Horse</h3>
+            <form id="horse-form">
+                <input type="text" id="horse-name" placeholder="Horse Name" required />
+                <input type="text" id="horse-breed" placeholder="Breed" required />
+                <input type="text" id="horse-age" placeholder="Age (in years)" required />
+                <input type="number" id="horse-price" placeholder="Price" required />
+                <textarea id="horse-description" placeholder="Description" required></textarea>
+                <button type="submit">List Horse</button>
+            </form>
+        </div>
+        <div id="horse-list">
+            <h3>Current Listings</h3>
+            <ul id="listings-container"></ul>
+        </div>
+    </section>
+
+    <section id="register">
+        <h2>User Registration</h2>
+        <form id="registration-form">
+            <input type="text" id="username" placeholder="Username" required />
+            <input type="password" id="password" placeholder="Password" required />
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <footer>
+        <h3>Contact Us</h3>
+        <p>Email: support@equest.com</p>
+        <p>&copy; 2025 EQuest.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
