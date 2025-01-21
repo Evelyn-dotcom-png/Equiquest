@@ -14,7 +14,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const color = document.getElementById('color').value;
     const location = document.getElementById('location').option;
     const description = document.getElementById('description').value;
-    const payment = document.getElementById('payment-method').value
+    const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+
+const createCheckoutSession = async (req, res) => {
+  const { productId, quantity } = req.body;
+
+  const product = await getProductById(productId); // Fetch product from DB
+
+  try {
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [
+        {
+          price_data: {
+            currency: 'usd',
+            product_data: {
+              name: product.name,
+            },
+            unit_amount: product.price * 50,
+          },
+          quantity: quantity,
+        },
+      ],
+      mode: 'payment',
+      success_url: `${process.env.BASE_URL}/success`,
+      cancel_url: `${process.env.BASE_URL}/cancel`,
+    });
+
+    res.json({ id
     // Create a new horse card
     const horseCard = document.createElement('div');
     horseCard.classList.add('horse-card');
