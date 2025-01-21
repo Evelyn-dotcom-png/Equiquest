@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const color = document.getElementById('color').value;
     const location = document.getElementById('location').option;
     const description = document.getElementById('description').value;
-
+    const payment = document.getElementById('payment-method').value
     // Create a new horse card
     const horseCard = document.createElement('div');
     horseCard.classList.add('horse-card');
