@@ -73,3 +73,22 @@ const https://buy.stripe.com/test_eVafZjbNE2a2aC49AA = async (req, res) => {
     form.reset();
   });
 });
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './HomePage';
+import ProductDetail from './ProductDetail';
+import LoginPage from './LoginPage';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
