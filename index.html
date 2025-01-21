@@ -14,6 +14,7 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#listings">Horse Listings</a></li>
+                <li><a href="advanced-search">Advanced Search</a></li>
                 <li><a href="#register">Register</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -22,7 +23,7 @@
 
     <section id="about">
         <h2>About EQuest</h2>
-        <p>Provide and find your your dream horses! Founded in 2025 by EvelynPritchard, a high school student with a love of horses and coding.</p>
+        <p>Provide and find your your dream horses! Founded in 2025 by Evelyn Pritchard, a high school student with a love of horses and coding.</p>
     </section>
 
     <section id="listings">
@@ -30,15 +31,17 @@
         <div id="listing-form">
             <h3>List Your Horse</h3>
             <form id="horse-form">
-                <input type="text" id="horse-name" placeholder="Horse Name" required />
-                <input type="text" id="horse-breed" placeholder="Breed" required />
-                <input type="text" id="horse-age" placeholder="Age (in years)" required />
-                <input type="number" id="horse-price" placeholder="Price" required />
-                <select id="locationDropdown">
-  <option value="US">United States</option>
-  <option value="EU">Europe</option>
-  <option value="CA">Canada</option>
-  <option value="AU">Australia</option>
+    <input type="text" id="horse-name" placeholder="Horse Name" required />
+    <input type="text" id="horse-breed" placeholder="Breed" required />
+    <input type="text" id="horse-age" placeholder="Age (in years)" required /> 
+    <input type="number" id="horse-price" placeholder="Price" required />
+    <label for="locationDropdown">Select a Location:</label>
+
+    <select id="locationDropdown" name="location">
+    <option value="US">United States</option>
+    <option value="EU">Europe</option>
+    <option value="CA">Canada</option>
+    <option value="AU">Australia</option>
                 <input type="text" id="horse-color" placeholder="Color" required /> 
                 <textarea id="horse-description" placeholder="Description" required></textarea>
                 <button type="submit">List Horse</button>
