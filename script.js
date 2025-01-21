@@ -14,6 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const color = document.getElementById('color').value;
     const location = document.getElementById('location').option;
     const description = document.getElementById('description').value;
+    const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, 'uploads/'),
+  filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname),
+});
+const upload = multer({ storage });
+
+router.post('/upload', upload.single('image'), (req, res) => {
+  res.send(`File uploaded: ${req.file.path}`);
+});
     const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 const https://buy.stripe.com/test_eVafZjbNE2a2aC49AA = async (req, res) => {
