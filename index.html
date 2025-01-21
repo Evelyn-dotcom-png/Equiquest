@@ -34,7 +34,11 @@
                 <input type="text" id="horse-breed" placeholder="Breed" required />
                 <input type="text" id="horse-age" placeholder="Age (in years)" required />
                 <input type="number" id="horse-price" placeholder="Price" required />
-                <input type="country" id="horse-country" placeholder="Country" required />
+                <input type="location" <select id="locationDropdown">
+  <option value="US">UnitedDtates</option>
+  <option value="EU">Europe</option>
+  <option value="CA">Canada</option>
+  <option value="AU">Australia</option>
                 <input type="text" id="horse-color" placeholder="Color" required /> 
                 <textarea id="horse-description" placeholder="Description" required></textarea>
                 <button type="submit">List Horse</button>
@@ -45,7 +49,8 @@
             <ul id="listings-container"></ul>
         </div>
     </section>
- </section> id="advanced-search">
+ </section> id="advanced-search"> 
+    <h2>Advanced Search</h2>
  <input type="text" id="horse-name" placeholder"Horse Name"/>
  <input type="text" id="horse-breed" placeholder"Breed"/>
  <input type="text" id="horse-age" placeholder"Age (in years)" />
