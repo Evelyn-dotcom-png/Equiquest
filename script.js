@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const breed = document.getElementById('breed').value;
     const age = document.getElementById('age').value;
     const price = document.getElementById('price').value;
+    const color = document.getElementById('color').value;
     const description = document.getElementById('description').value;
 
     // Create a new horse card
