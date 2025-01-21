@@ -13,9 +13,13 @@
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
+              
                 <li><a href="#listings">Horse Listings</a></li>
+              
                 <li><a href="advanced-search">Advanced Search</a></li>
+             
                 <li><a href="#register">Register</a></li>
+           
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -36,8 +40,7 @@
     <input type="text" id="horse-age" placeholder="Age (in years)" required /> 
     <input type="number" id="horse-price" placeholder="Price" required />
     <label for="locationDropdown">Select a Location:</label>
-
-    <select id="locationDropdown" name="location">
+   <select id="locationDropdown" name="location">
     <option value="US">United States</option>
     <option value="EU">Europe</option>
     <option value="CA">Canada</option>
@@ -49,6 +52,9 @@
                 <button type="submit">List Horse</button>
             </form>
         </div>
+        
+        
+        
         <div id="horse-list">
             <h3>Current Listings</h3>
             <ul id="listings-container"></ul>
@@ -57,49 +63,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Advanced Search</title>
-    <style>
-        /* Basic styling for the form */
-        form {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-        }
-        label {
-            margin-bottom: 5px;
-        }
-        input[type="text"], select {
-            padding: 8px;
-            margin-bottom: 10px;
-        }
-    </style>
+   
+    
+    
+        
+        
 </head>
 <body>
     <h2>Advanced Search</h2>
     <form action="search_results.php" method="get">
-        <label for="keywords">Keywords:</label>
-        <input type="text" id="keywords" name="keywords" placeholder="Enter search terms">
-        <label for="date_range">Date Range:</label>
-        <input type="date" id="date_start" name="date_start"> 
-        <input type="date" id="date_end" name="date_end">
+          <label for="keywords">Keywords:</label>
+          <input type="text" id="keywords" name="keywords" placeholder="Enter search terms">
+          <label for="date_range">Date Range:</label>
+          <input type="date" id="date_start" name="date_start"> 
+          <input type="date" id="date_end" name="date_end">
         
-        <button type="submit">Search</button>
+          <button type="submit">Search</button>
     </form>
 </body>
 </html>
     
- <input type="text" id="horse-name" placeholder"Horse Name"/>
- <input type="text" id="horse-breed" placeholder"Breed"/>
- <input type="text" id="horse-age" placeholder"Age (in years)" />
- <input type="number" id="horse-price" placeholder="Price" />
- <label for="locationDropdown">Select a Location:</label>
+          <input type="text" id="horse-name" placeholder"Horse Name"/>
+          <input type="text" id="horse-breed" placeholder"Breed"/>
+          <input type="text" id="horse-age" placeholder"Age (in years)" />
+          <input type="number" id="horse-price" placeholder="Price" />
+          <label for="locationDropdown">Select a Location:</label>
 
-    <select id="locationDropdown" name="location">
-    <option value="US">United States</option>
-    <option value="EU">Europe</option>
-    <option value="CA">Canada</option>
-    <option value="AU">Australia</option
-    <input type="text" id="horse-color" placeholder= "Color" />
+          <select id="locationDropdown" name="location">
+          <option value="US">United States</option>
+          <option value="EU">Europe</option>
+          <option value="CA">Canada</option>
+          <option value="AU">Australia</option
+          <input type="text" id="horse-color" placeholder= "Color" />
 
     <!-- sign-up.html -->
 <!DOCTYPE html>
