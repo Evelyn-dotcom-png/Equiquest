@@ -175,6 +175,67 @@
       </div>
     </section>
   </main>
+  
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <h2>Your Trusted Equestrian Marketplace</h2>
+      <form action="#listings">
+        <input type="text" placeholder="Search horses by breed, discipline, or location">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Horse Listings Section -->
+  <section id="listings">
+    <div class="container">
+      <h2>Available Horses</h2>
+      <div class="grid"></div>
+    </div>
+  </section>
+
+  <!-- Add Listing Section -->
+  <section id="add-listing">
+    <div class="container">
+      <h2>Add Your Horse Listing</h2>
+      <form id="add-listing-form">
+        <label for="horseName">Horse Name:</label>
+        <input type="text" id="horseName" placeholder="e.g., Bella" required>
+
+        <label for="breed">Breed:</label>
+        <input type="text" id="breed" placeholder="e.g., Thoroughbred" required>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="e.g., 5" required>
+
+        <label for="color">Color:</label>
+        <input type="text" id="color" placeholder="e.g., Chestnut" required>
+
+        <label for="price">Price ($):</label>
+        <input type="number" id="price" placeholder="e.g., 5000" required>
+
+        <label for="location">Location:</label>
+        <select id="location" required>
+          <option value="" disabled selected>Select Location</option>
+          <option value="United States">United States</option>
+          <option value="Canada">Canada</option>
+          <option value="Europe">Europe</option>
+          <option value="Australia">Australia</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea id="description" placeholder="Write a short description about the horse" rows="5" required></textarea>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" accept="image/*" required>
+
+        <p><strong>Fee:</strong> $50 per listing</p>
+        <button type="submit">Submit Listing</button>
+      </form>
+    </div>
+  </section>
+  </main>
 
   <footer>
     <div class="container">
