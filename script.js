@@ -120,3 +120,22 @@ const productSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Product', productSchema);
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+
+const auth = getAuth();
+
+// Sign Up
+document.getElementById('signup-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            console.log('User Signed Up:', userCredential.user);
+            // Redirect to dashboard or home page
+        })
+        .catch((error) => {
+            console.error(error.message);
+        });
+});
