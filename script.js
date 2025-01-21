@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const description = document.getElementById('description').value;
     const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
-const createCheckoutSession = async (req, res) => {
+const https://buy.stripe.com/test_eVafZjbNE2a2aC49AA = async (req, res) => {
   const { productId, quantity } = req.body;
 
   const product = await getProductById(productId); // Fetch product from DB
@@ -29,11 +29,11 @@ const createCheckoutSession = async (req, res) => {
           price_data: {
             currency: 'usd',
             product_data: {
-              name: product.name,
+              name: listing .name,
             },
             unit_amount: product.price * 50,
           },
-          quantity: quantity,
+          quantity: 1,
         },
       ],
       mode: 'payment',
@@ -53,34 +53,8 @@ const createCheckoutSession = async (req, res) => {
       <p><strong>location:</strong> ${location}</p>
       <p>${description}</p>
     `;
-const Stripe = require('stripe');
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
-const createCheckoutSession = async (req, res) => {
-  const { productId, quantity } = req.body;
-
-  const product = await getProductById(productId); // Fetch product from DB
-
-  try {
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: [
-        {
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: 'payment'name,
-            },
-            unit_amount: product.price * 50,
-          },
-          quantity: quantity,
-        },
-      ],
-      mode: 'payment',
-      success_url: `${process.env.BASE_URL}/success`,
-      cancel_url: `${process.env.BASE_URL}/cancel`,
-    });
-
+  
     res.json({ id
     // Add the new card to the horse list
     horseList.appendChild(horseCard);
