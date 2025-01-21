@@ -1,1 +1,5 @@
 npm install multer
+npx create-react-app equestpro
+cd equestpro
+npm start
+npm install react-router-dom
