@@ -22,7 +22,7 @@
 
     <section id="about">
         <h2>About EQuest</h2>
-        <p>Your premier online marketplace for buying and selling horses. Join our community!</p>
+        <p>Provide and find your your dream horses! Founded in 2025 by EvelynPritchard, a high school student with a love of horses and coding.</p>
     </section>
 
     <section id="listings">
@@ -34,7 +34,8 @@
                 <input type="text" id="horse-breed" placeholder="Breed" required />
                 <input type="text" id="horse-age" placeholder="Age (in years)" required />
                 <input type="number" id="horse-price" placeholder="Price" required />
-                <input type="text" id="horse-color" placeholder="color" required /> 
+                <input type="country" id="horse-country" placeholder="Country" required />
+                <input type="text" id="horse-color" placeholder="Color" required /> 
                 <textarea id="horse-description" placeholder="Description" required></textarea>
                 <button type="submit">List Horse</button>
             </form>
@@ -44,11 +45,18 @@
             <ul id="listings-container"></ul>
         </div>
     </section>
+ </section> id="advanced-search">
+ <input type="text" id="horse-name" placeholder"Horse Name"/>
+ <input type="text" id="horse-breed" placeholder"Breed"/>
+ <input type="text" id="horse-age" placeholder"Age (in years)" />
+ <input type="number" id="horse-price" placeholder="Price" />
+ <input type="country" id="horse-country" placeholder="Country" />
+ <input type="text" id="horse-color" placeholder= "Color" />
 
     <section id="register">
         <h2>User Registration</h2>
         <form id="registration-form">
-            <input type="text" id="username" placeholder="Username" required />
+            <input type="text" id="email" placeholder="email" required />
             <input type="password" id="password" placeholder="Password" required />
             <button type="submit">Register</button>
         </form>
