@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EQuest - Equestrian Marketplace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>EQuest</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="container">
+        <h2>Your Trusted Equestrian Marketplace</h2>
+        <form id="search-form">
+          <input type="text" id="search" placeholder="Search horses by breed, discipline, or location">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="listings">
+      <div class="container">
+        <h2>Available Horses</h2>
+        <div id="horse-list" class="grid">
+          <!-- Horse listings will populate here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 EQuest. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
